@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -11,7 +12,7 @@ import android.widget.TextView;
 import android.widget.ViewAnimator;
 
 public class SecondActivity extends AppCompatActivity {
-
+    private static final String LOG_TAG = SecondActivity.class.getSimpleName();
     Button btnmsgReply;
     TextView tvMsg,tvMassageRecived;
     EditText etMsgReply;
@@ -51,7 +52,10 @@ public class SecondActivity extends AppCompatActivity {
         Intent replyIntent = new Intent();
         replyIntent.putExtra(KEY_INTENT1, msgrep);
         setResult(RESULT_OK, replyIntent);
+        Log.d(LOG_TAG, "End SecondActivity");
         finish();
+
+
 
     }
 
